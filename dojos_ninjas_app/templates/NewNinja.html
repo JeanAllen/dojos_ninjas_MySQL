@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css' ) }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>New Ninja</title>
+</head>
+
+<body>
+
+    <div class="container pt-4">
+        <header>
+            <h1>New Ninja</h1>
+        </header>
+        <section>
+            <form action="/ninjas/create" method="POST">
+                <label for=" dojo_id">Dojo:</label>
+                <select class="form-select form-label form-control" id="dojo_id" name="dojo_id" required
+                    aria-required="true" aria-label="Default select example">
+                    {% for dojo in all_dojos: %}
+                    <option value="{{dojo.id}}">{{dojo.name}}</option>
+                    {% endfor %}
+                </select>
+                <label for=" first_name" class="form-label">First Name:</label>
+                <input class="form-control" id="first_name" type="text" name="first_name" required aria-required="true">
+                <label for="last_name" class="form-label">Last Name:</label>
+                <input class="form-control" id="last_name" type="text" name="last_name" required aria-required="true">
+                <label for="age" class="form-label">Age:</label>
+                <input class="form-control" id="age" type="text" name="age" required aria-required="true">
+                <div class="d-flex justify-content-between">
+                    <input class="btn btn-dark mt-2" type="submit" value="Create">
+                    <a class="btn btn-dark mt-2" href="/dojos">Home</a>
+                </div>
+            </form>
+        </section>
+    </div>
+</body>
+
+</html>

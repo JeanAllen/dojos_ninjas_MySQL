@@ -1,0 +1,16 @@
+#main-content {
+    width: 70%;
+    height: 500px;
+    background-color:cadetblue;
+    display: inline-flex
+}
+#dojo-box {
+    width: 100%;
+    height:100%;
+    background-color:orchid;
+}
+#all-dojo-box {
+    width: 100%;
+    height:100%;
+    background-color:red
+}
